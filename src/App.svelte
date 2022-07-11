@@ -18,7 +18,7 @@
       >
       <a
         class="hover:text-sky-700"
-        href="https://github.com/dtinth/djot-playground">Playground (PoC)</a
+        href="https://github.com/dtinth/djot-playground">Playground</a
       >
     </h1>
     <div class="relative flex-1">
