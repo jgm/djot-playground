@@ -23,7 +23,7 @@
     </h1>
     <div class="relative flex-1">
       <textarea
-        class="absolute inset-0 w-full h-full rounded border border-slate-400 p-4"
+        class="font-mono absolute inset-0 w-full h-full rounded border border-slate-400 p-4"
         bind:value
       />
     </div>
