@@ -18,8 +18,9 @@
       >
       <a
         class="hover:text-sky-700"
-        href="https://github.com/dtinth/djot-playground">Playground</a
+        href="https://github.com/jgm/djot-playground">Playground</a
       >
+      (<a href="syntax.html">syntax reference</a>)
     </h1>
     <div class="relative flex-1">
       <textarea

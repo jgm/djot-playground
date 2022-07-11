@@ -7,5 +7,6 @@ all:
 
 upload:
 	scp dist/index.html website:djot.net/playground/index.html
-	scp -r dist/assets website:djot.net/assets
+	scp -r dist/assets website:djot.net/playground/
+	scp ../djot/doc/syntax.html website:djot.net/
 
