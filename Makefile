@@ -5,8 +5,12 @@ all:
 	yarn build
 	# files are in dist
 
-upload:
-	scp dist/index.html website:djot.net/playground/index.html
-	scp -r dist/assets website:djot.net/playground/
-	scp ../djot/doc/syntax.html website:djot.net/
+copy:
+	cp dist/index.html $$HOME/web/djot.net/playground/
+	cp -r dist/assets $$HOME/web/djot.net/playground/
 
+#upload:
+#	scp dist/index.html website:djot.net/playground/index.html
+#	scp -r dist/assets website:djot.net/playground/
+#	scp ../djot/doc/syntax.html website:djot.net/
+#

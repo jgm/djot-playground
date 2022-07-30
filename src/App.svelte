@@ -20,7 +20,7 @@
         class="hover:text-sky-700"
         href="https://github.com/jgm/djot-playground">Playground</a
       >
-      (<a href="syntax.html">syntax reference</a>)
+      (<a href="https://htmlpreview.github.io/?https://github.com/jgm/djot/blob/master/doc/syntax.html">syntax reference</a>)
     </h1>
     <div class="relative flex-1">
       <textarea
