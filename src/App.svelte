@@ -8,6 +8,8 @@
 You can try out djot's {=syntax=} with this
 live "playground."[^1]
 
+\$\$\` P(E)   = {n \\choose k} p^k (1-p)^{ n-k} \`
+
 1. one :smiley:
 
  - sub

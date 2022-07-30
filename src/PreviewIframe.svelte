@@ -12,15 +12,17 @@
     if (doc) {
       const body = doc.querySelector('#htmlbody')
       if (body) body.innerHTML = html
+      document.getElementById('preview').contentWindow.MathJax.typeset();
     }
   }
   $: inject(html)
 </script>
 
 <iframe
+  id="preview"
   bind:this={iframe}
   on:load={onload}
-  sandbox="allow-same-origin"
+  sandbox="allow-same-origin allow-scripts"
   {srcdoc}
   class="absolute top-0 left-0 w-full h-full bg-white"
   title="Preview"
