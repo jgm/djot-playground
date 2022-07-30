@@ -3,8 +3,19 @@
   import PreviewIframe from './PreviewIframe.svelte'
 
   let status = 'Initializing Djot...'
-  let value = ''
-  let preview = false
+  let value = `# Try djot
+
+You can try out djot's _syntax_ with this
+live preview.
+
+1. one
+
+ - sub
+ - sub
+
+2. two
+`
+  let preview = true
   const toHtmlPromise = createDjotToHtmlConverter(
     (logText) => (status = logText),
   )
