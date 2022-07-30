@@ -5,15 +5,17 @@
   let status = 'Initializing Djot...'
   let value = `# Try djot
 
-You can try out djot's _syntax_ with this
-live preview.
+You can try out djot's {=syntax=} with this
+live "playground."[^1]
 
-1. one
+1. one :smiley:
 
  - sub
  - sub
 
 2. two
+
+[^1]: By @dtinth.
 `
   let preview = true
   const toHtmlPromise = createDjotToHtmlConverter(
