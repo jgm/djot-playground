@@ -5,6 +5,10 @@ html {
     line-height: 1.3;
     font-family: ui-sans-serif;
 }
+table, tr, td {
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
 </style>
 <script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
