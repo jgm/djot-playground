@@ -20,6 +20,7 @@ live "playground."[^1]
 [^1]: By @dtinth.
 `
   let output = "preview"
+  let sourcepos = false
   const convertPromise = createDjotConverter(
     (logText) => (status = logText),
   )
@@ -56,6 +57,9 @@ live "playground."[^1]
         <option value="matches">Matches</option>
         <option value="jsonmatches">Matches (JSON)</option>
       </select>
+      <label>
+        <input type="checkbox" bind:checked={sourcepos} /> Source positions
+      </label>
     </h1>
     <div class="relative flex-1">
       {#await convertPromise}
@@ -69,37 +73,37 @@ live "playground."[^1]
           <div
             class="absolute inset-0 rounded border border-slate-400 overflow-hidden"
           >
-            <PreviewIframe html={convert(value, "html")} />
+            <PreviewIframe html={convert(value, "html", sourcepos)} />
           </div>
         {:else if output === "html"}
           <div
             class="absolute inset-0 rounded border border-slate-400 overflow-auto p-4"
           >
-            <pre class="whitespace-pre-wrap">{convert(value, "html")}</pre>
+            <pre class="whitespace-pre-wrap">{convert(value, "html", sourcepos)}</pre>
           </div>
         {:else if output === "ast"}
           <div
             class="absolute inset-0 rounded border border-slate-400 overflow-auto p-4"
           >
-            <pre class="whitespace-pre-wrap">{convert(value, "ast")}</pre>
+            <pre class="whitespace-pre-wrap">{convert(value, "ast", sourcepos)}</pre>
           </div>
         {:else if output === "jsonast"}
           <div
             class="absolute inset-0 rounded border border-slate-400 overflow-auto p-4"
           >
-            <pre class="whitespace-pre-wrap">{pretty(convert(value, "jsonast"))}</pre>
+            <pre class="whitespace-pre-wrap">{pretty(convert(value, "jsonast", sourcepos))}</pre>
           </div>
         {:else if output === "matches"}
           <div
             class="absolute inset-0 rounded border border-slate-400 overflow-auto p-4"
           >
-            <pre class="whitespace-pre-wrap">{convert(value, "matches")}</pre>
+            <pre class="whitespace-pre-wrap">{convert(value, "matches", sourcepos)}</pre>
           </div>
         {:else if output === "jsonmatches"}
           <div
             class="absolute inset-0 rounded border border-slate-400 overflow-auto p-4"
           >
-            <pre class="whitespace-pre-wrap">{pretty(convert(value, "jsonmatches"))}</pre>
+            <pre class="whitespace-pre-wrap">{pretty(convert(value, "jsonmatches", sourcepos))}</pre>
           </div>
         {/if}
       {:catch error}

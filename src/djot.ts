@@ -34,8 +34,8 @@ export async function createDjotConverter(
   log('Loading preamble code')
   await engine.doString(`
       local djot = require("djot")
-      function convert(input, format)
-        local parser = djot.Parser:new(input)
+      function convert(input, format, sourcepos)
+        local parser = djot.Parser:new(input, {sourcepos = sourcepos})
         parser:parse()
         if format == "html" then
           local html = parser:render_html()
