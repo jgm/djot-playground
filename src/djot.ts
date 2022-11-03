@@ -14,6 +14,7 @@ export async function createDjotToHtmlConverter(
     'djot/emoji.lua',
     'djot/html.lua',
     'djot/inline.lua',
+    'djot/json.lua',
     'djot/match.lua',
   ]
   const baseUrl = 'https://raw.githubusercontent.com/jgm/djot/main/'
