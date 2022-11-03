@@ -48,24 +48,14 @@ live "playground."[^1]
   </div>
   <div class="w-1/2 flex flex-col gap-2">
     <h1 class="flex flex-row flex-wrap gap-5">
-      <label>
-        <input type="radio" bind:group="{output}" name="output" value="preview" /> Preview
-      </label>
-      <label>
-        <input type="radio" bind:group="{output}" name="output" value="html" /> HTML
-      </label>
-      <label>
-        <input type="radio" bind:group="{output}" name="output" value="ast" /> AST
-      </label>
-      <label>
-        <input type="radio" bind:group="{output}" name="output" value="jsonast" /> JSON AST
-      </label>
-      <label>
-        <input type="radio" bind:group="{output}" name="output" value="matches" /> Matches
-      </label>
-      <label>
-        <input type="radio" bind:group="{output}" name="output" value="jsonmatches" /> JSON Matches
-      </label>
+      <select bind:value={output}>
+        <option value="preview">Preview</option>
+        <option value="html">HTML</option>
+        <option value="ast">AST</option>
+        <option value="jsonast">AST (JSON)</option>
+        <option value="matches">Matches</option>
+        <option value="jsonmatches">Matches (JSON)</option>
+      </select>
     </h1>
     <div class="relative flex-1">
       {#await convertPromise}
