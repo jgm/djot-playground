@@ -1,7 +1,7 @@
 import { LuaFactory } from 'wasmoon'
 import glue from 'wasmoon/dist/glue.wasm?url'
 
-export async function createDjotToHtmlConverter(
+export async function createDjotConverter(
   log = (text: string) => console.log(text),
 ) {
   log('Creating Lua factory')
@@ -33,15 +33,29 @@ export async function createDjotToHtmlConverter(
 
   log('Loading preamble code')
   await engine.doString(`
-    local djot = require("djot")
-    function toHtml(input)
-      local parser = djot.Parser:new(input)
-      parser:parse()
-      local html = parser:render_html()
-      return html
-    end
-  `)
+      local djot = require("djot")
+      function convert(input, format)
+        local parser = djot.Parser:new(input)
+        parser:parse()
+        if format == "html" then
+          local html = parser:render_html()
+          return html
+        elseif format == "ast" then
+          local ast = parser:render_ast()
+          return ast
+        elseif format == "jsonast" then
+          local jsonast = parser:render_ast(nil, true)
+          return jsonast
+        elseif format == "matches" then
+          local matches = parser:render_matches(nil)
+          return matches
+        elseif format == "jsonmatches" then
+          local matches = parser:render_matches(nil, true)
+          return matches
+        end
+      end
+    `)
 
-  const toHtml = engine.global.get('toHtml')
-  return toHtml
+  const convert = engine.global.get('convert')
+  return convert
 }
