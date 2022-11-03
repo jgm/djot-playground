@@ -15,6 +15,7 @@ export async function createDjotToHtmlConverter(
     'djot/html.lua',
     'djot/inline.lua',
     'djot/match.lua',
+    'djot/json.lua',
   ]
   const baseUrl = 'https://raw.githubusercontent.com/jgm/djot/main/'
   for (const file of filesToMount) {
