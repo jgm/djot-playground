@@ -11,6 +11,9 @@
     const doc = iframe?.contentDocument
     if (doc) {
       const body = doc.querySelector('#htmlbody')
+      const baseTag = document.createElement('base')
+      baseTag.target = '_parent'
+      doc.head.append(baseTag)
       if (body) body.innerHTML = html
       document.getElementById('preview').contentWindow.MathJax.typeset();
     }
