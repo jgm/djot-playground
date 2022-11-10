@@ -1,7 +1,8 @@
 # djot-playground
 
 A web application that converts [djot](https://github.com/jgm/djot) to HTML.
-Live at <https://djot.net/playground/>.
+This was formerly used at <https://djot.net/playground/>, but we have now
+replaced the playground with a new one based on directly compiling to WASM.
 
 The app uses the latest Lua source code from the main branch (loaded directly from GitHub).
 
